@@ -4,15 +4,16 @@
     <head>
 
         <title>Ensimmäinen sivu</title>
+        <link rel="stylesheet" href="style.css">
 
     </head>
     <body>
 
-        <hi>Tervetuloa</hi>
+        <h1>Tervetuloa</h1>
 
-        <p>Tämä on mielenkiintoista tehdä!</p>
+        <p>Tätä on mielenkiintoista tehdä!</p>
 
-        <a href="https://www.w3.org/People/Raggett/book4/ch02.html">This is link</a>
+        <a href="https://www.w3.org/People/Raggett/book4/ch02.html"> target="_blank">Tämä on linkki</a>
 
     </body>
     
