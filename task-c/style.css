@@ -1,5 +1,32 @@
 /*
 Author: Mona Määttänen
-Date: 2025-09-24
+Date: 2025-09-23
 */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Kuvan max leveys */
+img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Media keskelle ja väliä */
+audio,
+iframe {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Tekstille pieni väli */
+p {
+  margin-top: 20px;
+}
 
