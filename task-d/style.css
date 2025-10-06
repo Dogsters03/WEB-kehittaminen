@@ -1,0 +1,71 @@
+/*
+Author: Mona Määttänen
+Date: 2025-09-23
+*/
+
+body {
+    background-color: antiquewhite;
+    color: #000; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: rgb(0, 119, 255);
+    font-size: large;
+}
+
+p {
+    color: rgb(0, 119, 255);
+}
+
+a {
+    color: rgb(255, 0, 200);
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+.kurssit {
+    background-color: #e8d9ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.haasteet {
+    background-color: #ffd9e8;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#special-message {
+    background-color: #ffff99;
+    color: #333;
+    font-style: italic;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+ol {
+    color: rgb(162, 0, 255);
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+section ol li {
+    margin-left: 10px;
+    color: darkviolet;
+}
+
+a[target="_blank"] {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+img[alt] {
+    border: 2px solid darkblue;
+    border-radius: 6px;
+    width: 150px;
+}
+
