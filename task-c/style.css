@@ -9,7 +9,6 @@ body {
   text-align: center;
 }
 
-/* Kuvan max leveys */
 img {
   width: 100%;
   max-width: 500px;
@@ -18,14 +17,16 @@ img {
   margin: 0 auto 20px;
 }
 
-/* Media keskelle ja väliä */
-audio,
-iframe {
+
+video {
   display: block;
   margin: 0 auto 20px;
+  width: 100%;
+  max-width: 500px;
+  border: none;
+  border-radius: 10px; 
 }
 
-/* Tekstille pieni väli */
 p {
   margin-top: 20px;
 }
