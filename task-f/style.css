@@ -176,6 +176,10 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
 /* Alternate row color */
 .table tbody tr:nth-child(even) {
   background: var(--table-alt);
