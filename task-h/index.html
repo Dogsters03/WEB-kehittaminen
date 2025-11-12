@@ -6,68 +6,80 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="index.js"></script>
 </head>
-<body>
+<body class="bg-slate-100 text-slate-800 font-sans">
   <!--
     Author: Mona Määttänen
     Date: 2025-11-12
   -->
-  <header class="site-header">
-    <h1>Registration Form</h1>
+
+  <!-- Header -->
+  <header class="bg-blue-900 text-white py-6 text-center">
+    <h1 class="text-2xl font-semibold">Registration Form</h1>
   </header>
 
-  <main class="content">
-    <section class="controls" aria-label="User Registration">
-      <h2>Register</h2>
-      <form id="registrationForm" novalidate>
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto my-8 px-4">
+    <!-- Form Section -->
+    <section class="bg-white border border-slate-300 rounded-lg p-6 shadow-md mb-8" aria-label="User Registration">
+      <h2 class="text-xl font-semibold mb-4 text-blue-900">Register</h2>
+
+      <form id="registrationForm" novalidate class="space-y-4">
         <input type="hidden" id="timestamp" name="timestamp">
 
-        <div class="form-row">
-          <label for="fullName">Full name:</label>
-          <input type="text" id="fullName" name="fullName" placeholder="e.g. Anna Example">
-          <span class="error" id="nameError"></span>
+        <div>
+          <label for="fullName" class="block font-medium mb-1">Full name:</label>
+          <input type="text" id="fullName" name="fullName" placeholder="e.g. Anna Example"
+                 class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900">
+          <span id="nameError" class="text-red-600 text-sm mt-1 block"></span>
         </div>
 
-        <div class="form-row">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="e.g. anna@example.com">
-          <span class="error" id="emailError"></span>
+        <div>
+          <label for="email" class="block font-medium mb-1">Email:</label>
+          <input type="email" id="email" name="email" placeholder="e.g. anna@example.com"
+                 class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900">
+          <span id="emailError" class="text-red-600 text-sm mt-1 block"></span>
         </div>
 
-        <div class="form-row">
-          <label for="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" placeholder="+358 40 1234567">
-          <span class="error" id="phoneError"></span>
+        <div>
+          <label for="phone" class="block font-medium mb-1">Phone:</label>
+          <input type="tel" id="phone" name="phone" placeholder="+358 40 1234567"
+                 class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900">
+          <span id="phoneError" class="text-red-600 text-sm mt-1 block"></span>
         </div>
 
-        <div class="form-row">
-          <label for="birthdate">Birth date:</label>
-          <input type="date" id="birthdate" name="birthdate">
-          <span class="error" id="birthError"></span>
+        <div>
+          <label for="birthdate" class="block font-medium mb-1">Birth date:</label>
+          <input type="date" id="birthdate" name="birthdate"
+                 class="w-full border border-slate-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-900">
+          <span id="birthError" class="text-red-600 text-sm mt-1 block"></span>
         </div>
 
-        <div class="form-row">
-          <label>
-            <input type="checkbox" id="terms"> I accept the terms
-          </label>
-          <span class="error" id="termsError"></span>
+        <div class="flex items-center gap-2">
+          <input type="checkbox" id="terms" class="w-4 h-4 text-blue-900 border-slate-300 focus:ring-blue-900">
+          <label for="terms" class="text-sm">I accept the terms</label>
+          <span id="termsError" class="text-red-600 text-sm ml-2"></span>
         </div>
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit"
+                class="bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition">
+          Submit
+        </button>
       </form>
     </section>
 
-    <div class="table-wrap">
-      <table id="dataTable" class="table">
+    <!-- Table Section -->
+    <div class="bg-white border border-slate-300 rounded-lg p-6 shadow-md overflow-x-auto">
+      <table id="dataTable" class="min-w-full text-sm border-collapse">
         <thead>
-          <tr>
-            <th>Timestamp</th>
-            <th>Full Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Birth Date</th>
+          <tr class="bg-blue-900 text-white">
+            <th class="text-left py-2 px-3">Timestamp</th>
+            <th class="text-left py-2 px-3">Full Name</th>
+            <th class="text-left py-2 px-3">Email</th>
+            <th class="text-left py-2 px-3">Phone</th>
+            <th class="text-left py-2 px-3">Birth Date</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody class="divide-y divide-slate-200"></tbody>
       </table>
     </div>
   </main>
