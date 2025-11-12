@@ -1,8 +1,9 @@
 /*
 Author: Mona Määttänen
-Date: 2025-11-04
+Date: 2025-11-12
 */
 
+/*
 :root {
   --base-size: 1rem;
   --h1-size: 1.6rem;
@@ -30,6 +31,7 @@ body {
 }
 
 /* Header */
+/*
 .site-header {
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -44,6 +46,7 @@ body {
 }
 
 /* Content container with side margins */
+/*
 .content {
   margin-left: 15%;
   margin-right: 15%;
@@ -52,6 +55,7 @@ body {
 }
 
 /* --- NEW: top row split (50% + 50%) --- */
+/*
 .top-grid {
   display: flex;
   gap: 1rem;
@@ -136,6 +140,7 @@ body {
 }
 
 /* Table container */
+/*
 .table-wrap {
   background: #fff;
   border: 1px solid var(--border);
@@ -146,6 +151,7 @@ body {
 }
 
 /* Table */
+/*
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -153,6 +159,7 @@ body {
 }
 
 /* Header cells */
+/*
 .table thead th {
   background: var(--brand);
   color: #fff;
@@ -162,17 +169,20 @@ body {
 }
 
 /* Body cells */
+/*
 .table tbody td {
   padding: 0.6rem 0.75rem;
   border-bottom: 1px solid var(--border);
 }
 
 /* Alternate row color */
+/*
 .table tbody tr:nth-child(even) {
   background: var(--table-alt);
 }
 
 /* Column widths: 40% + 12%*5 = 100% */
+/*
 .table thead th:nth-child(1),
 .table tbody td:nth-child(1) {
   width: 40%;
@@ -185,6 +195,7 @@ body {
 }
 
 /* Small screens: stack the top blocks */
+/*
 @media (max-width: 860px) {
   .content {
     margin-left: 5%;
@@ -197,6 +208,7 @@ body {
 }
 
 /* ≤ 768px: margins 5% */
+/*
 @media (max-width: 768px) {
   .content {
     margin-left: 5%;
@@ -216,6 +228,7 @@ body {
 }
 
 /* ≤ 640px: margins 1%, show only the table */
+/*
 @media (max-width: 640px) {
   .content {
     margin-left: 1%;
