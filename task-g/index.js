@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form.fullName.value.trim(),
       form.email.value.trim(),
       form.phone.value.trim(),
-      form.birthdate.value
+      form.birthdate.value,
       form.terms.checked ? "Yes" : "No"
     ].forEach(text => {
       const td = document.createElement("td");
