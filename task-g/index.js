@@ -1,9 +1,6 @@
-// Author: Mona Määttänen
-// Date: 2025-11-03
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registrationForm");
-  const tbody = document.querySelector("#dataTable tbody");
+  const tbody = document.querySelector("#timetable tbody"); // FIXED
   const timestampInput = document.getElementById("timestamp");
 
   form.addEventListener("submit", (e) => {
@@ -24,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form.fullName.value.trim(),
       form.email.value.trim(),
       form.phone.value.trim(),
-      form.birthdate.value,
-      form.terms.checked ? "Yes" : "No"
+      form.birthdate.value
     ].forEach(text => {
       const td = document.createElement("td");
       td.textContent = text;
@@ -58,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Phone (Finnish +358 or 0)
-    if (!/^(\+358|0)\s?\d{5,10}$/.test(phone)) {
+    if (!/^(\+358|0)\\s?\\d{5,10}$/.test(phone)) {
       showError("phoneError", "Enter a valid Finnish phone number (+358 or 0...).");
       valid = false;
     }

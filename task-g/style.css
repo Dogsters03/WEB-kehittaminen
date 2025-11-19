@@ -1,6 +1,15 @@
 /*
-Author: Mona Määttänen
-Date: 2025-11-03
+Author: Ville Heikkiniemi
+Date: 2025-10-06
+*/
+
+/* COLOR GUIDELINES
+   - Page background: very light gray (#f6f8fb)
+   - Main text: dark gray (#1f2937)
+   - Header background: deep blue (#273e73), text white
+   - Table header row: same deep blue, text white
+   - Table rows: alternate white (#fff) / light blue (#eef3ff)
+   - Borders: light gray (#d0d7e2)
 */
 
 :root {
@@ -225,10 +234,4 @@ body {
   .student-info {
     display: none;
   }
-}
-
-.error {
-  color: #c00;
-  font-size: 0.9rem;
-  margin-left: 0.5rem;
 }
