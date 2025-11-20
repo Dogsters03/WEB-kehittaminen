@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registrationForm");
-  const tbody = document.querySelector("#timetable tbody"); // FIXED
+  const tbody = document.querySelector("#timetable tbody");
   const timestampInput = document.getElementById("timestamp");
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Update hidden timestamp
+    // Päivitä piilotettu timestamp
     timestampInput.value = new Date().toLocaleString();
 
     clearErrors();
@@ -14,14 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!isValid) return;
 
-    // Collect values
+    // Kerää kenttien arvot
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const phone = form.tel.value.trim();
+    const birth = form.birth.value;
+    const terms = document.getElementById("rights").checked;
+
+    // Luo uusi taulukkorivi
     const row = document.createElement("tr");
     [
       timestampInput.value,
-      form.fullName.value.trim(),
-      form.email.value.trim(),
-      form.phone.value.trim(),
-      form.birthdate.value
+      name,
+      email,
+      phone,
+      birth,
+      terms ? "Yes" : "No"
     ].forEach(text => {
       const td = document.createElement("td");
       td.textContent = text;
@@ -35,13 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function validateForm() {
     let valid = true;
 
-    const name = form.fullName.value.trim();
+    const name = form.name.value.trim();
     const email = form.email.value.trim();
-    const phone = form.phone.value.trim();
-    const birth = form.birthdate.value;
-    const terms = document.getElementById("terms").checked;
+    const phone = form.tel.value.trim();
+    const birth = form.birth.value;
+    const terms = document.getElementById("rights").checked;
 
-    // Name: at least 2 words, each ≥2 chars
+    // Name: vähintään 2 sanaa, jokainen ≥2 merkkiä
     if (!/^[A-Za-zÀ-ÖØ-öø-ÿ]{2,}\s+[A-Za-zÀ-ÖØ-öø-ÿ]{2,}/.test(name)) {
       showError("nameError", "Please enter your full name (first and last).");
       valid = false;
@@ -53,13 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     }
 
-    // Phone (Finnish +358 or 0)
-    if (!/^(\+358|0)\\s?\\d{5,10}$/.test(phone)) {
-      showError("phoneError", "Enter a valid Finnish phone number (+358 or 0...).");
+    // Phone (Suomalainen: +358 tai 0)
+    if (!/^(\+358|0)\s?\d{5,10}$/.test(phone)) {
+      showError("telError", "Enter a valid Finnish phone number (+358 or 0...).");
       valid = false;
     }
 
-    // Birth date: not in the future, min age 13
+    // Birth date: ei tulevaisuudessa, vähintään 13 vuotta
     if (birth) {
       const birthDate = new Date(birth);
       const now = new Date();
@@ -78,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Terms
     if (!terms) {
-      showError("termsError", "You must accept the terms to continue.");
+      showError("rightsError", "You must accept the terms to continue.");
       valid = false;
     }
 

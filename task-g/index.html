@@ -1,122 +1,126 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Information form</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Information form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
 
-  <body>
+<body>
 
-    <!--
-    Author: Mona Määttänen
-    Date: 2025-11-03
-    -->
+  <!--
+  Author: Mona Määttänen
+  Date: 2025-11-03
+  -->
 
-    <header class="site-header">
-      <h1>Registration From</h1>
-    </header>
+  <header class="site-header">
+    <h1>Registration Form</h1>
+  </header>
 
-    <main class="content">
-      <!-- Top row split into two blocks -->
-      <div class="top-grid">
-        <!-- Student info (30%) -->
-        <section class="student-info" aria-label="Student information">
-          <h2 class="student-info-title">Information</h2>
-          <p><span class="student-name">Mona Määttänen</span></p>
-          <p><span class="student-group">NTIS24k</span></p>
-        </section>
+  <main class="content">
+    <!-- Top row split into two blocks -->
+    <div class="top-grid">
+      <!-- Student info (30%) -->
+      <section class="student-info" aria-label="Student information">
+        <h2 class="student-info-title">Information</h2>
+        <p><span class="student-name">Mona Määttänen</span></p>
+        <p><span class="student-group">NTIS24k</span></p>
+      </section>
 
-        <!-- Controls (70%): add course + day marks -->
-        <section class="controls" aria-label="Add course row">
-          <h2 class="controls-title">Register</h2>
+      <!-- Controls (70%): add course + day marks -->
+      <section class="controls" aria-label="Add course row">
+        <h2 class="controls-title">Register</h2>
 
-          <form id="fullForm">
-            <div class="form-row">
-              <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                placeholder="ex. Anna Example"
-              />
-            </div>
-            <p class="error" id="nameError"></p>
+        <form id="registrationForm">
+          <!-- Hidden timestamp -->
+          <input type="hidden" id="timestamp">
 
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="ex. anna@example.com"
-              />
-            </div>
-            <p class="error" id="emailError"></p>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              placeholder="ex. Anna Example"
+            />
+          </div>
+          <p class="error" id="nameError"></p>
 
-            <div class="form-row">
-              <label for="tel">Phone number</label>
-              <input
-                id="tel"
-                name="tel"
-                type="tel"
-                required
-                placeholder="ex. 358 40 1234567"
-              />
-            </div>
-            <p class="error" id="telError"></p>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="ex. anna@example.com"
+            />
+          </div>
+          <p class="error" id="emailError"></p>
 
-            <div class="form-row">
-              <label for="birth">Birthdate</label>
-              <input
-                id="birth"
-                name="birth"
-                type="date"
-                required
-              />
-            </div>
-            <p class="error" id="birthError"></p>
+          <div class="form-row">
+            <label for="tel">Phone number</label>
+            <input
+              id="tel"
+              name="tel"
+              type="tel"
+              required
+              placeholder="ex. 358 40 1234567"
+            />
+          </div>
+          <p class="error" id="telError"></p>
 
-            <div class="form-row">
-              <label
-                ><input 
-                id="rights" 
-                name="terms" 
-                type="checkbox" 
-                /> Terms accepted</label>
-            </div>
-            <p class="error" id="rightsError"></p>
+          <div class="form-row">
+            <label for="birth">Birthdate</label>
+            <input
+              id="birth"
+              name="birth"
+              type="date"
+              required
+            />
+          </div>
+          <p class="error" id="birthError"></p>
 
-            <div class="form-row">
-              <button id="addRowBtn" type="submit" class="btn">Submit</button>
-              <button id="clearBtn" type="reset" class="btn btn-secondary">Clear</button>
-            </div>
-          </form>
-        </section>
-      </div>
+          <div class="form-row">
+            <label>
+              <input 
+              id="rights" 
+              name="terms" 
+              type="checkbox" 
+              /> Terms accepted
+            </label>
+          </div>
+          <p class="error" id="rightsError"></p>
 
-      <!-- Table -->
-      <div class="table-wrap">
-        <table class="table" id="timetable">
-          <thead>
-            <tr>
-              <th>Timestamp</th>
-              <th>Full Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Birth date</th>
-              <th>Terms accepted</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </div>
-    </main>
+          <div class="form-row">
+            <button id="addRowBtn" type="submit" class="btn">Submit</button>
+            <button id="clearBtn" type="reset" class="btn btn-secondary">Clear</button>
+          </div>
+        </form>
+      </section>
+    </div>
 
-  </body>
+    <!-- Table -->
+    <div class="table-wrap">
+      <table class="table" id="timetable">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Birth date</th>
+            <th>Terms accepted</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
 
 </html>
